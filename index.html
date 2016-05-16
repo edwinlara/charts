@@ -2,53 +2,29 @@
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load('current', {'packages':['sankey']});
+      google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
-
       function drawChart() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'From');
-        data.addColumn('string', 'To');
-        data.addColumn('number', 'Weight');
-        data.addRows([
-          ['Middle Class', 'No Segment', 2200],
-          ['Middle Class', 'Interested in arts', 600],
-          ['Middle Class', 'Mobile Youth', 1200],
-          ['Middle Class', 'Baby Boomers', 2000],
-
-          ['No Segment', 'Total Audience', 8000],
-          ['Interested in arts', 'Total Audience', 1000],
-          ['Mobile Youth', 'Total Audience', 2000],
-          ['Baby Boomers', 'Total Audience', 3000],
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2013',  1000,      400],
+          ['2014',  1170,      460],
+          ['2015',  660,       1120],
+          ['2016',  1030,      540]
         ]);
 
-        // Sets chart options.
         var options = {
-          width: 600,
-          height: 500,
-          sanky: {
-          node: {
-            colors: colors
-          },
-          link: {
-            colorMode: 'gradient',
-            colors: colors
-           }
-          }
+          title: 'Company Performance',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
         };
 
-        var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f',
-          '#cab2d6', '#ffff99', '#1f78b4', '#33a02c'
-        ];
-
-        // Instantiates and draws our chart, passing in some options.
-        var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
     </script>
   </head>
   <body>
-    <div id="sankey_basic" style="width: 900px; height: 300px;"></div>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
   </body>
 </html>
-
