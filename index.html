@@ -19,47 +19,22 @@
           ['Mobile Youth', 'Total Audience', 2000],
           ['Baby Boomers', 'Total Audience', 3000],
         ]);
-        google.charts.load('current', {
-        'packages': ['sankey']
-      });
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'From');
-        data.addColumn('string', 'To');
-        data.addColumn('number', 'Weight');
-        data.addRows([
-          ['Middle Class', 'No Segment', 2200],
-          ['Middle Class', 'Baby Boomers', 2000],
-          ['Middle Class', 'Mobile Youth', 1200],
-          ['Middle Class', 'Interested in arts', 600],
-
-          ['No Segment', 'Total Audience', 8000],
-          ['Baby Boomers', 'Total Audience', 3000],
-          ['Mobile Youth', 'Total Audience', 2000],
-          ['Interested in arts', 'Total Audience', 1000],
-          
-        ]);
-
         // Sets chart options.
-       
-      var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f',
+        var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f',
                    '#cab2d6', '#ffff99'];
-
     var options = {
-      height: 800,
-      height: 450,
+      width: 820,
+      height: 205,
       sankey: {
         node: {
         
-          nodePadding: 100,
+          nodePadding: 25,
         
           label: {
                fontName: 'Helvetica',
                fontSize: 12,
                color: '#FFFFFF',
-               bold: true,
+               bold: false,
                },
         
           colors: colors
@@ -71,7 +46,6 @@
         }
       }
     };
-
         // Instantiates and draws our chart, passing in some options.
         var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
         chart.draw(data, options);
@@ -80,6 +54,6 @@
 
   </head>
   <body style="background-color:#242424;">
-    <div id="sankey_basic" style="width: 800px; height: 450px; padding-top: 1cm;"></div>
+    <div id="sankey_basic" style="width: 820px; height: 205px; padding-top: 1cm;"></div>
   </body>
 </html>
