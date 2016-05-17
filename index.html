@@ -20,36 +20,29 @@
           ['Baby Boomers', 'Total Audience', 3000],
         ]);
         // Sets chart options.
+        var options = {
+          width: 600,
+          height: 500,
+          sanky: {
+          node: {
+            colors: colors
+          },
+          link: {
+            colorMode: 'gradient',
+            colors: colors
+           }
+          }
+        };
         var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f',
-                   '#cab2d6', '#ffff99'];
-    var options = {
-      width: 800,
-      height: 450,
-      sankey: {
-        node: {
-        
-          nodePadding: 100,
-          
-          width: 4,
-        
-          label: {
-               fontName: 'Helvetica',
-               fontSize: 14,
-               color: '#FFFFFF',
-               bold: false,
-               },
-        
-          colors: colors
-        },
-        
-        link: {
-          colorMode: 'gradient',
-          colors: colors
-        }
-      }
-    };
+          '#cab2d6', '#ffff99', '#1f78b4', '#33a02c'
+        ];
         // Instantiates and draws our chart, passing in some options.
         var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
         chart.draw(data, options);
       }
     </script>
+  </head>
+  <body>
+    <div id="sankey_basic" style="width: 900px; height: 300px;"></div>
+  </body>
+</html>
