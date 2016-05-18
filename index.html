@@ -2,45 +2,45 @@
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-  google.charts.load('current', {
+      google.charts.load('current', {
         'packages': ['sankey']
       });
       google.charts.setOnLoadCallback(drawChart);
-​
+
       function drawChart() {
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'From');
         data.addColumn('string', 'To');
         data.addColumn('number', 'Audience size');
         data.addRows([
-​
+
           ['Unique to Segment', 'Middle Class Audience Size', 215000],
-​
+
           ['Middle Class', 'Unique to Segment', 215000],
           ['Middle Class', 'Interested in arts', 292000],
           ['Middle Class', 'Baby Boomers', 167000],
           ['Middle Class', 'Mobile Youth', 97000],
           //total Middle Class = 771,000
-​
+
           ['Mobile Youth', 'Middle Class Audience Size', 60000],
           ['Mobile Youth', 'Mobile Youth Interested in arts', 37000],
-​
-​
+
+
           ['Interested in arts', 'Baby Boomers interested in arts', 87000],
           ['Interested in arts', 'Middle Class Audience Size', 149000],
           ['Interested in arts', 'Mobile Youth Interested in arts', 56000],
-​
+
           //total interested in the arts 292000 
-​
+
           ['Baby Boomers', 'Baby Boomers interested in arts', 42500],
           ['Baby Boomers', 'Middle Class Audience Size', 124500],
-​
+
           //total baby boomers 167000
-​
+
           ['Mobile Youth Interested in arts', 'Middle Class Audience Size', 93000],
           ['Baby Boomers interested in arts', 'Middle Class Audience Size', 129500],
         ]);
-​
+
         // Sets chart options.
         var options = {
           width: 800,
@@ -51,8 +51,8 @@
             }
           },
         };
-​
-​
+
+
         // Instantiates and draws our chart, passing in some options.
         var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
         chart.draw(data, options);
@@ -60,7 +60,8 @@
     </script>
 
   </head>
-  <body style="background-color:#242424;">
-    <div id="sankey_basic" style="width: 820px; height: 870px; padding-top: 1cm;"></div>
+  <body style="background-color:#FFFFFF;">
+    <div id="sankey_basic" style="width: 900px; height: 300px; padding-top: 1cm;"></div>
   </body>
 </html>
+
