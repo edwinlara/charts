@@ -8,17 +8,36 @@
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'From');
         data.addColumn('string', 'To');
-        data.addColumn('number', 'Weight');
+        data.addColumn('number', 'Audience size');
         data.addRows([
-          ['Middle Class', 'No Segment', 2200],
-          ['Middle Class', 'Interested in arts', 600],
-          ['Middle Class', 'Mobile Youth', 1200],
-          ['Middle Class', 'Baby Boomers', 2000],
-          ['No Segment', 'Total Audience', 8000],
-          ['Interested in arts', 'Total Audience', 1000],
-          ['Mobile Youth', 'Total Audience', 2000],
-          ['Baby Boomers', 'Total Audience', 3000],
+​
+          ['Unique to Segment', 'Middle Class Audience Size', 215000],
+​
+          ['Middle Class', 'Unique to Segment', 215000],
+          ['Middle Class', 'Interested in arts', 292000],
+          ['Middle Class', 'Baby Boomers', 167000],
+          ['Middle Class', 'Mobile Youth', 97000],
+          //total Middle Class = 771,000
+​
+          ['Mobile Youth', 'Middle Class Audience Size', 60000],
+          ['Mobile Youth', 'Mobile Youth Interested in arts', 37000],
+​
+​
+          ['Interested in arts', 'Baby Boomers interested in arts', 87000],
+          ['Interested in arts', 'Middle Class Audience Size', 149000],
+          ['Interested in arts', 'Mobile Youth Interested in arts', 56000],
+​
+          //total interested in the arts 292000 
+​
+          ['Baby Boomers', 'Baby Boomers interested in arts', 42500],
+          ['Baby Boomers', 'Middle Class Audience Size', 124500],
+​
+          //total baby boomers 167000
+​
+          ['Mobile Youth Interested in arts', 'Middle Class Audience Size', 93000],
+          ['Baby Boomers interested in arts', 'Middle Class Audience Size', 129500],
         ]);
+        
         // Sets chart options.
         var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f',
                    '#cab2d6', '#ffff99'];
