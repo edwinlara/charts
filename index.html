@@ -40,7 +40,7 @@
           ['Baby Boomers interested in arts', 'Middle Class Audience Size', 129500],
         ]);
 
-        // Sets chart options.
+        // sets chart options.
         var options = {
           width: 800,
           height: 600,
@@ -51,7 +51,7 @@
           },
         };
 
-        // Instantiates and draws our chart, passing in some options.
+        // instantiates and draws our chart, passing in some options.
         var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
         chart.draw(data, options);
       }
