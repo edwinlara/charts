@@ -1,5 +1,49 @@
 <html>
   <head>
+    
+    <style type="text/css">
+    
+    div.google-visualization-tooltip > ul > li > span {color: blue !important; font-size: 11px !important;}
+
+.google-visualization-tooltip {
+  text-align: right !important;
+border: 0 !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+
+  position: fixed !important;
+    top: 0px !important; 
+    right: 120px !important;
+    left: 0px !important;
+    margin-top: 345px !important; 
+    /* left:0px !important; */
+
+box-shadow: none !important;
+  padding: 0px;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+
+font-size: 9px !important;
+color: Blue !important; 
+}
+
+.ax_default {
+ }
+ 
+ #u976 {
+  padding-top: 150px !important;   
+ }
+
+
+
+/* div.google-visualization-tooltip {
+  position: fixed; !important
+    left: -2400px; !important
+   border: none; 
+} */
+      
+    </style>
+    
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {
@@ -60,10 +104,15 @@
         var options = {
           width: 900,
           height: 340,
+          tooltip: {
+            trigger: 'selection',
+            isHtml: 'true'
+          },
           sankey: {
             node: {
               nodePadding: 30,
               width: 6,
+              colors: colors,
               label: {
                fontName: 'Helvetica',
                fontSize: 12,
@@ -71,8 +120,7 @@
                bold: false,
                
                },
-               
-              colors: colors
+              
        
             },
             
